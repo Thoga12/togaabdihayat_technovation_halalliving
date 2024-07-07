@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -44,4 +45,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-}
+    // app/Models/User.php
+    public function kursuses()
+    {
+        return $this->belongsToMany(Kursus::class, 'kursus_user');
+    }
+
+    public function zakatDonations()
+    {
+        return $this->hasMany(ZakatDonation::class);
+    }
+
+    public function courseReviews()
+    {
+        return $this->hasMany(KursusReview::class);
+    }
+
+    }
