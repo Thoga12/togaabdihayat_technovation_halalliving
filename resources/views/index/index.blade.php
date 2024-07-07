@@ -67,28 +67,28 @@
         </div>
         <div class="container-card-pendidikan">
             <div class="card-pendidikan">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Pemdidikan Halal">
+                <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
                 <div class="deskripsi-pendidikan">
                     <h5>Judul Pendidikan</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-pendidikan">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Pemdidikan Halal">
+                <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
                 <div class="deskripsi-pendidikan">
                     <h5>Judul Pendidikan</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-pendidikan">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Pemdidikan Halal">
+                <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
                 <div class="deskripsi-pendidikan">
                     <h5>Judul Pendidikan</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-pendidikan">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Pemdidikan Halal">
+                <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
                 <div class="deskripsi-pendidikan">
                     <h5>Judul Pendidikan</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
@@ -105,7 +105,7 @@
             </div>
         </div> --}}
         <div class="banner-donasi">
-            <img src="{{ asset('images/goyongjun.jpg') }}" alt="Banner Zakat Dan Donasi">
+            <img src="{{ asset('images/learning.png') }}" alt="Banner Zakat Dan Donasi">
             <div class="deskripsi-donasi">
                 <h2>Ayo Bantu Mereka Yang Membutuhkan Melaui Donasi Dan Zakat</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, ipsum</p>
@@ -121,7 +121,7 @@
                         </p>
                     </div>
                 </aside>
-                <a href="">Donasi Sekarang</a>
+                <a href="{{ route('register') }}">Donasi Sekarang</a>
             </div>
         </div>
     </section>
@@ -130,28 +130,28 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, ratione!</p>
         <div class="container-card-komunitas">
             <div class="card-komunitas">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Diskusi Terpopuler">
+                <img src="{{ asset('images/learning.png') }}" alt="Diskusi Terpopuler">
                 <div class="deskripsi-komunitas">
                     <h5>Judul Diskusi</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-komunitas">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Diskusi Terpopuler">
+                <img src="{{ asset('images/learning.png') }}" alt="Diskusi Terpopuler">
                 <div class="deskripsi-komunitas">
                     <h5>Judul Diskusi</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-komunitas">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Diskusi Terpopuler">
+                <img src="{{ asset('images/learning.png') }}" alt="Diskusi Terpopuler">
                 <div class="deskripsi-komunitas">
                     <h5>Judul Diskusi</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
             <div class="card-komunitas">
-                <img src="{{ asset('images/goyongjun.jpg') }}" alt="Diskusi Terpopuler">
+                <img src="{{ asset('images/learning.png') }}" alt="Diskusi Terpopuler">
                 <div class="deskripsi-komunitas">
                     <h5>Judul Diskusi</h5>
                     <p>Lorem ipsum dolor sit amet consectetur</p>

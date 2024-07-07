@@ -39,4 +39,8 @@ HalalLiving adalah platform web yang mendukung gaya hidup halal untuk umat Musli
    ->php artisan migrate:fresh --seed
    ->php artisan serve
    ->Buka http://localhost:8000
+
+2. **Halaman Dashboard Admin:**
+    email => test@example.com
+    password => 123456
    
