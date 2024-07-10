@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kursus_kuis', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kursus_id')->constrained('kursuses')->onDelete('cascade');;
-            $table->text('pertanyaan');
-            $table->enum('tipe', ['pilihan_ganda', 'esai']);
-            $table->text('options')->nullable();
-            $table->text('jawaban')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('subscription_id');
+            $table->decimal('amount', 10, 2);
+            $table->string('status')->default('pending');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kursus_kuis');
+        Schema::dropIfExists('transactions');
     }
 };

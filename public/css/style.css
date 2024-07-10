@@ -31,6 +31,97 @@ nav{
     font-size: small;
     gap: 60px;
 }
+.nav-dashboard{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.banner-dashboard{
+    padding: 50px 50px 20px 50px;
+    background-color: #ED9455;
+    color: #fff;
+}
+.banner-dashboard h1 {
+    /* margin-top: 50px; */
+    font-size: 2.5em;
+}
+
+
+.banner-dashboard p{
+    margin-top: 6px;
+}
+.banner-dashboard aside{
+    margin-top: 20px;
+    border: 1px solid #00000049;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+}
+.banner-dashboard aside p{
+    padding: 20px;
+    border: 1px solid #00000057;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+.aktivitas{
+    padding: 30px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    place-items: center;
+}
+.aktivitas .container-aktivitas{
+    width: 550px;
+    border: 1px solid #0000004d;
+    border-radius: 3px;
+}
+.aktivitas .container-aktivitas > h3{
+    padding: 20px;
+    border-bottom: 1px solid #0000004d;
+}
+.aktivitas .container-aktivitas .card-aktivitas{
+    margin: 20px;
+    padding: 20px;
+    background-color: #F3D0D7;
+    border-radius: 3px;
+
+}
+.card-aktivitas > h3{
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.logout-user{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    /* padding: 10px; */
+    margin-top: 76px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px #00000053;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.logout-user button {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #00000029;
+}
+
+.logout-user button:hover{
+    background-color: #2e4dd3;
+    color: #fff;
+}
 nav a{
     text-decoration: none;
     /* margin-right: 60px; */
@@ -57,9 +148,16 @@ nav a.active{
 .float-right{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
-
+.profil{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .float-right .search input {
     border: none;
     outline: none;
@@ -75,7 +173,11 @@ nav a.active{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background: url('public/images/background.png'); */
+    background-image: url('../images/background-Banner.jpeg');
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: url(''); */
     /* background-image: url('public/images/background.png'); */
 }
 .banner {
@@ -159,7 +261,7 @@ nav a.active{
     border-radius: 6px;
 }
 .pendidikan-halal{
-    background-color: #FFEFEF;
+    background-color: #fff;
     height: 100vh;
     width: 100%;
     padding-top: 30px;
@@ -225,14 +327,17 @@ nav a.active{
     font-size: 0.6em;
 }
 .donasi{
-    height: 100vh;
+    height: 120vh;
     width: 100%;
+    padding-top: 130px;
     /* background-image: url('/images/background.png'); */
     background-repeat: no-repeat;
+    /* background-color: #d6d2d29a; */
     background-size: cover;
+    background-color: #F0EBE3;
 }
 .donasi > h1{
-    margin-top: 130px;
+    /* margin-top: 130px; */
     text-align: center;
 }
 .donasi > p{
@@ -281,11 +386,11 @@ nav a.active{
 .komunitas{
     width: 100%;
     height: 90vh;
-    background-color: #F0EBE3;
+    background-color: #EADBC8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .komunitas h1{
     text-align: center;
@@ -357,9 +462,11 @@ nav a.active{
 }
 .daftar-kursus{
     width: 100%;
-    height: 100vh;
+    height: max-content;
     /* margin-top: 30px; */
     /* display: flex; */
+    /* background-color: #ED9455; */
+    position: relative;
     border-top: 1px solid #00000022;
     box-shadow: 0px -1px 3px #00000041;
 }
@@ -408,10 +515,11 @@ nav a.active{
     height: 200px;
     row-gap: 20px;
     padding-top: 30px;
+    padding-bottom: 20px;
 }
 .container-card-kursus .card-kursus {
     width: 46vw;
-    height: 200px;
+    /* height: 200px; */
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #00000023;
@@ -438,18 +546,203 @@ nav a.active{
     object-fit: cover;
     cursor: pointer;
 }
+.detail-kursus{
+    /* height: 30dvh; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3d0d754;
+    padding: 30px 100px;
+}
+.detail-kursus > aside{
+    display: flex;
+    gap: 20px;
+}
+.deskripsi-kursus{
+    height: 50vh;
+    width: 100%;
+    padding: 30px 100px;
+    border-top: 1px solid #00000042;
+    border-bottom: 1px solid #00000042;
+    background-color: #fcf8f9;
+}
+.deskripsi-kursus p{
+    margin-top: 6px;
+}
+.detail-kursus img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.detail-kursus .card-aside{
+    /* width: 200px; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* height: 150px; */
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 0px 2px #00000062;
+    border-radius: 10px;
+}
+.card-aside .learning-now{
+    background-color: skyblue;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.card-aside .a{
+    border-radius: 3px;
+    padding: 10px 20px;
+    background-color: #c4bdbf6e;
+    margin-bottom: 10px;
+}
+.container-langganan{
+    width: 100%;
+    padding: 50px;
+    border-radius: 2px;
+}
+.container-langganan .card-langganan{
+    width: 90vw;
+    border: 1px solid #00000042;
+    padding: 50px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.container-langganan .card-langganan .card-harga-langganan{
+    width: 500px;
+    height: max-content;
+    padding: 30px;
+    border: 1px solid #00000027;
+    border-radius: 2px;
+}
+.container-langganan .card-langganan h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container-langganan .card-langganan h5{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.container-langganan .card-langganan a{
+    text-align: center;
+    background-color: #ED9455;
+    padding: 10px 20px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+.container-langganan .card-langganan .card-harga-langganan > aside{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+/* .back{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #0000005a;
+} */
+.nav-checkout{
+    /* width: 100%; */
+    height: 60px;
+    border-bottom: 1px solid #0000005a;
+}
+.nav-checkout .back a{
+    padding: 10px 20px;
+    background-color: #ED9455;
+    border-radius: 3px;
+    color: #fff;
+}
+.checkout{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.checkout h1 {
+    margin-top: 30px;
+}
+.checkout .detail-checkout{
+    margin-top: 10px;
+    width: 60vw;
+    border: 1px solid #00000052;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+.checkout .detail-checkout > h5{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #0000003c;
+}
+.checkout .detail-checkout > aside{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #0000003c;
+}
+.metode-pembayaran{
+    padding: 20px 0;
+
+}
+.metode-pembayaran select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    appearance: none; /* Remove default arrow in some browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14L2.451 6.344c-.566-.566-.21-1.535.635-1.535h9.828c.846 0 1.201.969.636 1.535l-4.796 4.796a.8.8 0 0 1-1.133 0z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+}
+
+.metode-pembayaran select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.metode-pembayaran select option {
+    padding: 10px;
+    color: #333;
+    background-color: #fff;
+}
+.footer-checkout {
+    padding: 20px 0;
+    border-top: 1px solid #0000003c;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-checkout aside p{
+    margin-bottom: 20px;
+}
+.footer-checkout aside a{
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: #ED9455;
+    color: #fff;
+    margin-top: 20px;
+}
 footer{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
+    padding: 30px;
+    position: absolute;
 }
 footer h1{
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 .instansi{
     display: grid;
@@ -457,6 +750,7 @@ footer h1{
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
     gap: 30px;
+    /* margin-bottom: 20px; */
 }
 .instansi .card-instansi{
     width: 250px;

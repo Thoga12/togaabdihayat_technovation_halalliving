@@ -21,11 +21,19 @@ class CheckRole
             return redirect('login');
         }
 
+        // $user = Auth::user();
         $user = Auth::user();
         if ($user->role !== $role) {
-            // Redirect ke halaman yang sesuai jika pengguna tidak memiliki role yang diinginkan
-            return redirect('/login');
+            // Redirect to appropriate dashboard based on user role
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            } else if ($user->role === 'user') {
+                return redirect()->route('user.dashboard');
+            } else {
+                return abort(403, 'Unauthorized action.');
+            }
         }
+
 
         return $next($request);
     }

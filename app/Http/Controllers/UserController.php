@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kursus;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     public function index(){
-        return view('admin.dashboard.dashboard');
+        $count = User::count();
+        $countKelas = Kursus::count();
+        return view('admin.dashboard.dashboard',[
+            'user' => $count,
+            'kelas' => $countKelas
+        ]);
     }
     public function index1(){
         return view('admin.dashboard.userdashboard');
@@ -28,11 +34,22 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
 
-            return redirect()->intended('/dashboard');
+            if ($user->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->role == 'user') {
+                return redirect()->route('user.dashboard');
+            } else {
+                return redirect('/');
+            }
         }
+        // if(Auth::attempt($credentials)){
+        //     $request->session()->regenerate();
+
+        //     return redirect()->intended('/');
+        // }
         return back()->with('loginError', 'Login Gagal');
         // dd("Berhasil Login");
     }
@@ -72,6 +89,6 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

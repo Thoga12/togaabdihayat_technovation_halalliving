@@ -1,7 +1,11 @@
 @include('admin.partials.sidebar')
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Daftar Kursus</h1>
                     <div class="table-responsive small">
@@ -36,19 +40,19 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $kursus->judul }}</td>
-                                <td><img src="{{ asset('storage/'. $kursus->img) }}" alt="{{ $kursus->judul }}"></td>
+                                <td><img src="{{ asset($kursus->img) }}" alt="{{ $kursus->judul }}" width="100px" height="100px" style="object-fit:cover;"></td>
                                 <td>{{ $kursus->kategori }}</td>
-                                <td>{{ $kursus->harga }}</td>
+                                <td>Rp. {{ $kursus->harga }}</td>
                                 {{-- <td>{{ $kursus->instruktur_id }}</td> --}}
                                 <td>{{ $kursus->deskripsi }}</td>
                                 {{-- <td>{{ $kursus->img }}</td> --}}
                                 <td class="d-flex">
-                                    {{-- <a href="artikel/{{ $kursus->id }}"><button class="btn btn-primary"><i class="bi bi-eye"></i></button></a> --}}
-                                    <a href="/admin/kursus-offline/{{ $kursus->id }}/edit"><button class="btn btn-primary btn-sm mr-1"><i class="bi bi-pencil-square small"></i></button></a>
-                                    <form action="/admin/kursus-offline/{{ $kursus->id }}" method="POST" class="d-inline">
+                                    <a href="{{ route('kursus.show', $kursus->id) }}"><button class="btn btn-primary"><i class="fa-solid fa-info"></i></button></a>
+                                    <a href="{{ route('kursus.edit', $kursus->id) }}"><button class="btn btn-primary btn-sm mr-1"><i class="fa-solid fa-pen"></i></button></a>
+                                    <form action="{{ route('kursus.destroy', $kursus->id) }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin!?')"><i class="bi bi-trash3"></i></button>
+                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin!?')"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

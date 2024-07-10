@@ -9,6 +9,7 @@ class ModulKursus extends Model
 {
     use HasFactory;
     // app/Models/CourseModule.php
+    protected $guarded = ['id','timestamps'];
     public function course()
     {
         return $this->belongsTo(Kursus::class);

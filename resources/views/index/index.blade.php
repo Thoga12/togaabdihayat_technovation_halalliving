@@ -8,13 +8,15 @@
             </h1>
             <img src="{{ asset('images/banner1.png') }}" alt="HalalLiving">
         </div>
-        <div class="navigasi">
-            <a href="">Gabung Sekarang</a>
-            <a href="">Pelajari Lebih Lanjut</a>
-        </div>
+        @guest
+            <div class="navigasi">
+                <a href="{{ route('login') }}">Gabung Sekarang</a>
+                <a href="#kelas">Pelajari Lebih Lanjut</a>
+            </div>
+        @endguest
     </section>
 
-    <section class="berita-terbaru">
+    {{-- <section class="berita-terbaru">
         <h1>Berita Terbaru</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, expedita.</p>
         <div class="container-card">
@@ -52,8 +54,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="pendidikan-halal">
+    </section> --}}
+    <section class="pendidikan-halal" id="kelas">
         <h1>Pendidikan Halal</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p>
         <div class="banner-pendidikan">
@@ -63,7 +65,7 @@
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, iste?
                 </p>
             </div>
-            <img src="{{ asset('images/banner.png') }}" alt="Banner Pendidikan">
+            <img src="{{ asset('images/image.png') }}" alt="Banner Pendidikan">
         </div>
         <div class="container-card-pendidikan">
             <div class="card-pendidikan">

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('modul_kursuses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained('kursuses');
+            $table->foreignId('kursus_id')->constrained('kursuses')->onDelete('cascade');;
             $table->string('judul');
             $table->text('deskripsi')->nullable();
-            $table->string('file_path')->nullable();
+            $table->longText('content')->nullable();
             $table->timestamps();
         });
     }

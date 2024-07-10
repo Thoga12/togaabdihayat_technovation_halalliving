@@ -16,7 +16,7 @@
         <h3>HALALLIFE</h3>
         <nav class="navbar">
             <a href="/">Beranda</a>
-            <a href="">Berita Halal</a>
+            <a href="{{ 'langganan ' }}">Berlangganan</a>
             <a href="aboutMe.html">Komunitas</a>
             <a href="sertifikat.html">Transaksi Syariah</a>
             <a href="{{ route('daftarKursus') }}">Pendidikan Halal</a>
@@ -27,9 +27,15 @@
                 {{-- <i class="bi bi-search"></i> --}}
                 {{-- <input type="text" placeholder="Search"> --}}
             {{-- </div> --}}
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('register') }}">Daftar</a>
+            @guest
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Daftar</a>
+            @endguest
+            @auth
+                <a href="{{ route('user.dashboard') }}">Dashboard</a>
+                <img src="{{ asset('images/1720466663.jpg') }}" alt="Profil" class="profil">
             {{-- <a href=""><div><i class="bi bi-github btn-chat"></i></div></a> --}}
+            @endauth
         </aside>
         {{-- <a href=""><div><i class="bi bi-github btn-chat"></i></div></a> --}}
     </header>
