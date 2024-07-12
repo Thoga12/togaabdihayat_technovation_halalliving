@@ -28,9 +28,16 @@
             <p>Semoga Materi Yang Disediakan Berguna Bagi Anda</p>
             <aside>
                 <h3>Status Langganan</h3>
-                <div class="status-langganan">
-                    <p>Anda Sudah Melakukan Langganan</p>
-                </div>
+                @if ($checkSubscription->hasActiveSubscription())
+                    <div class="status-langganan">
+                        <p>Anda Sudah Melakukan Langganan</p>
+                    </div>
+                @else
+                    <div class="status-langganan">
+                        <p>Anda Belum Melakukan Langganan</p>
+                    </div>
+                @endif
+
             </aside>
         @endif
     </section>

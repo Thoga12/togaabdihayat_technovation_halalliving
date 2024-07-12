@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kursus;
+use App\Models\ModulKursus;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomePageContrroler extends Controller
 {
@@ -15,14 +18,47 @@ class HomePageContrroler extends Controller
     }
     public function detailKursus(Kursus $kursu)
     {
-
-
-
         // dd($kursu);
-        return view('kursus.detailKursua',[
-            'kursus' => $kursu
+        // $course = $kursu->load(['modules', 'quizzes']);
+        $kursus = $kursu->load(['modules', 'quizzes']);
+        return view('kursus.detailKursua', compact('kursus'));
+        // return view('kursus.detailKursua',[
+        //     'kursus' => $kursu,
+        //     'course' => $kursu->load(['modules'])
+        // ]);
+    }
+    public function modul(Kursus $kursu, ModulKursus $modul_kursu)
+    {
+        $user = Auth::user();
+        // dd($user);
+
+        // dd($kursu, $modul_kursu);
+        if (!$user->hasActiveSubscription()) {
+            // Jika pengguna tidak memiliki langganan aktif, arahkan mereka ke halaman lain atau tampilkan pesan
+            return redirect()->route('langganan')->with('error', 'Anda harus memiliki langganan aktif untuk mengakses modul ini.');
+        }
+        return view('kursus.modul',[
+            'modul' => $modul_kursu,
+            'moduls' => ModulKursus::all(),
+            'course' => $kursu
         ]);
     }
+    public function checkSubscription($userId)
+    {
+        $user = User::find($userId);
+
+        if ($user->hasActiveSubscription()) {
+            return response()->json(['status' => 'active']);
+        } else {
+            return response()->json(['status' => 'inactive']);
+        }
+    }
+    // public function modul(Kursus $kursu, ModulKursus $modul_kursu)
+    // {
+    //     $course = $kursu->load(['modules', 'quizzes']);
+    //     return view('kursus.modul', compact('course'));
+    // }
+
 
     protected $subscriptions = [
         [

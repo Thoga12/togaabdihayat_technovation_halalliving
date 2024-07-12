@@ -7,12 +7,15 @@ use App\Http\Controllers\ModulKursusController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
+use App\Models\Kursus;
 use App\Models\ModulKursus;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index/index');
+    return view('index/index',[
+        'kelas' => Kursus::all()
+    ]);
 });
 
 Route::get('/daftar-kursus', [HomePageContrroler::class, 'daftarKursus'])->name('daftarKursus');
@@ -20,6 +23,7 @@ Route::get('/detail-kursus/{kursu}', [HomePageContrroler::class, 'detailKursus']
 Route::get('/langganan', [HomePageContrroler::class, 'langganan'])->name('langganan');
 Route::get('/langganan/{id}', [HomePageContrroler::class, 'checkout'])->name('checkout');
 
+Route::get('/detail-kursus/{kursu}/modul/{modul_kursu}', [HomePageContrroler::class, 'modul'])->name('modul')->middleware('auth');
 Route::get('/login', [UserController::class, 'viewLogin'])->middleware('guest')->name('login');
 Route::get('/register', [UserController::class, 'viewRegister'])->middleware('guest')->name('register');
 Route::post('/login', [UserController::class, 'login']);

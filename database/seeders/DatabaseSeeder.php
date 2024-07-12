@@ -50,6 +50,26 @@ class DatabaseSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'judul' => 'Ekonomi Syariah',
+                'kategori' => 'Ekonomi',
+                'img' => 'images/learning.png',
+                'deskripsi' => 'Kursus tentang ekonomi syariah.',
+                'harga' => 150000.00,
+                'visibility' => 'subscribers',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'judul' => 'Ekonomi Syariah',
+                'kategori' => 'Ekonomi',
+                'img' => 'images/learning.png',
+                'deskripsi' => 'Kursus tentang ekonomi syariah.',
+                'harga' => 150000.00,
+                'visibility' => 'subscribers',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
             // Tambahkan data lainnya sesuai kebutuhan
         ]);
@@ -63,6 +83,18 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'kursus_id' => 2, // Sesuaikan dengan ID kursus yang ada
+                'user_id' => 2,   // Sesuaikan dengan ID user yang ada
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'kursus_id' => 3, // Sesuaikan dengan ID kursus yang ada
+                'user_id' => 2,   // Sesuaikan dengan ID user yang ada
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'kursus_id' => 3, // Sesuaikan dengan ID kursus yang ada
                 'user_id' => 2,   // Sesuaikan dengan ID user yang ada
                 'created_at' => now(),
                 'updated_at' => now(),

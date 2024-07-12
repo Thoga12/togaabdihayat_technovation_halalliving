@@ -21,7 +21,17 @@ class UserController extends Controller
         ]);
     }
     public function index1(){
-        return view('admin.dashboard.userdashboard');
+        $user = Auth::user();
+        // dd($user);
+
+        // dd($kursu, $modul_kursu);
+        // if (!$user->hasActiveSubscription()) {
+        //     Jika pengguna tidak memiliki langganan aktif, arahkan mereka ke halaman lain atau tampilkan pesan
+        //     return redirect()->route('user.dashboard')->with('error', 'Anda harus memiliki langganan aktif untuk mengakses modul ini.');
+        // }
+        return view('admin.dashboard.userdashboard',[
+            'checkSubscription' => $user
+        ]);
     }
     public function viewLogin()
     {

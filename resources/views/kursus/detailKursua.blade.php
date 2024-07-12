@@ -12,7 +12,11 @@
     </aside>
 
     <aside class="card-aside">
-        <a href="{{ route('transactions.index') }}" class="learning-now">Belajar Sekarang</a>
+        {{-- $kursus->modules --}}
+        @foreach ($kursus->modules->take(1) as $modul )
+            <a href="{{ route('modul',["kursu" => $kursus->id, "modul_kursu" => $modul->id]) }}" class="learning-now">Belajar Sekarang</a>
+        @endforeach
+        {{-- <a href="{{ route('transactions.index') }}" class="learning-now">Belajar Sekarang</a> --}}
         <a href="" class="a">Informasi Kelas</a>
         <a href="" class="a">Lihat Materi</a>
     </aside>

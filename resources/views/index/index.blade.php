@@ -68,7 +68,17 @@
             <img src="{{ asset('images/image.png') }}" alt="Banner Pendidikan">
         </div>
         <div class="container-card-pendidikan">
+            @foreach ($kelas as $kelas)
+
             <div class="card-pendidikan">
+                <img src="{{ $kelas->img }}" alt="{{ $kelas->judul }}">
+                <div class="deskripsi-pendidikan">
+                    <h5>{{ $kelas->judul }}</h5>
+                    <p>{{ $kelas->deskripsi }}</p>
+                </div>
+            </div>
+            @endforeach
+            {{-- <div class="card-pendidikan">
                 <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
                 <div class="deskripsi-pendidikan">
                     <h5>Judul Pendidikan</h5>
@@ -89,14 +99,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
             </div>
-            <div class="card-pendidikan">
-                <img src="{{ asset('images/learning.png') }}" alt="Pemdidikan Halal">
-                <div class="deskripsi-pendidikan">
-                    <h5>Judul Pendidikan</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-        </div>
+        </div> --}}
     </section>
     <section class="donasi">
         <h1>Zakat Dan Donasi</h1>

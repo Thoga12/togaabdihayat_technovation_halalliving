@@ -45,6 +45,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+    public function hasActiveSubscription()
+    {
+        return $this->transactions()
+                    ->where('status', 'completed')
+                    ->exists();
+    }
     // app/Models/User.php
     public function kursuses()
     {
@@ -60,5 +71,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(KursusReview::class);
     }
-
-    }
+}

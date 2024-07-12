@@ -20,7 +20,8 @@ a{
     color: #000;
 }
 main{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
+    /* color: white; */
 }
 nav{
     display: flex;
@@ -166,6 +167,12 @@ nav a.active{
     padding: 10px;
     border: 1px solid #000;
 }
+.float-right a{
+    padding: 10px 20px;
+    background-color: #ED9455;
+    border-radius: 2px;
+    color: #fff;
+}
 .container-banner{
     width: 100%;
     height: 100vh;
@@ -279,6 +286,7 @@ nav a.active{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
 }
 .pendidikan-halal .banner-pendidikan p{
     width: 500px;
@@ -318,6 +326,7 @@ nav a.active{
     color: #fff;
     text-align: center;
     margin-bottom: 10px;
+    padding: 10px;
 }
 .deskripsi-pendidikan h5{
     font-size: 0.7em;
@@ -451,6 +460,12 @@ nav a.active{
     justify-content: center;
     align-items: center;
     background-color: #f3d0d754;
+    background-image: url('../images/tes.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    color: white;
+    /* background-blend-mode: lighten; */
 }
 .title-daftar-kursus h1{
     text-align: center;
@@ -462,7 +477,7 @@ nav a.active{
 }
 .daftar-kursus{
     width: 100%;
-    height: max-content;
+    height: auto;
     /* margin-top: 30px; */
     /* display: flex; */
     /* background-color: #ED9455; */
@@ -512,7 +527,7 @@ nav a.active{
     grid-template-columns: repeat(auto-fill , minmax(46vw, 1fr));
     width: 100%;
     place-items: center;
-    height: 200px;
+    /* height: 200px; */
     row-gap: 20px;
     padding-top: 30px;
     padding-bottom: 20px;
@@ -585,6 +600,27 @@ nav a.active{
     text-align: center;
     box-shadow: 0px 0px 2px #00000062;
     border-radius: 10px;
+}
+.modul{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.modul .container-fluid{
+    overflow-y: scroll;
+    height: 100vh;
+}
+.modul .list-modul{
+    background-color: #F0EBE3;
+    overflow-y: scroll;
+    height: 100vh;
+}
+.modul .list-modul ul{
+    padding: 20px;
+    list-style: none;
+}
+.modul .list-modul ul li{
+    padding: 10px 20px;
+    border-bottom: 1px solid #00000039;
 }
 .card-aside .learning-now{
     background-color: skyblue;
